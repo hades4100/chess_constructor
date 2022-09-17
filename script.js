@@ -19,8 +19,22 @@ while (i < 8) {
   i++;
 }
 chess.splice(8, 1);
-console.log(chess);
-
+// console.log(chess);
+var color1 = "black";
+var color2 = "white";
+var b = document.querySelectorAll(".column");
+b[0].style.backgroundColor = color1;
+for (i = 1; i < 64; i++) {
+  if (i % 8 == 0) {
+    b[i].style.backgroundColor = b[i - 1].style.backgroundColor;
+    continue;
+  }
+  if (b[i - 1].style.backgroundColor == color1) {
+    b[i].style.backgroundColor = color2;
+  } else {
+    b[i].style.backgroundColor = color1;
+  }
+}
 //    using 3 while loops version:
 // var chess = [];
 // var i = 0;
